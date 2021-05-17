@@ -39,6 +39,8 @@ import io.restassured.specification.RequestSpecification;
 	}
  *
  *  Note : once IVR number is attached need to deleted by 'delete request'
+ *  
+ *  Note 2 : Updating in my branch api_anantha
  */
 public class TwoWayOBDHighPriorityAPI extends BaseClass {
 	
