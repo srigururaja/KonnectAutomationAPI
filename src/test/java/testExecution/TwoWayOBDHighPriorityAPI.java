@@ -511,6 +511,7 @@ public class TwoWayOBDHighPriorityAPI extends BaseClass {
 			
 		// Status code
 		APIResponseValidationLibrary.responseStatusCodeValidation(responseObj, "Unauthorized");
+		System.out.println("End of the test script --  TwowayOBD_invalidAuthorizationToken_Request");
 	 }// end of 'TwowayOBD_invalidAuthorizationToken_Request'
 	 
 	 
@@ -534,6 +535,7 @@ public class TwoWayOBDHighPriorityAPI extends BaseClass {
 			
 		// Status code
 		APIResponseValidationLibrary.responseStatusCodeValidation(responseObj, "method_not_allowed");
+		System.out.println("End of the test script --  TwowayOBD_invalidResourceEndPoint");
 		
 	 }// end of 'TwowayOBD_invalidResourceEndPoint'
 	 
