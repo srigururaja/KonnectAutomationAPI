@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testExecution.OutboundSMSAPI"/>
+      <class name="testExecution.OutboundSMSAPIHighPriority"/>
+      <class name="testExecution.InboundSMS_CreateAPI"/>
+      <class name="testExecution.InboundSMS_DeleteAPI"/>
+      <class name="testExecution.OTPByOBD_API"/>
+      <class name="testExecution.OBDLowPriorityAPI"/>
+       <class name="testExecution.OBDHighPriorityAPI"/>
+      <class name="testExecution.TwoWayOBDLowPriorityAPI"/>
+      <class name="testExecution.TwoWayOBDHighPriorityAPI"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
