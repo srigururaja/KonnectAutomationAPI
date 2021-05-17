@@ -14,18 +14,12 @@ public class MainFunc {
 	
 	public static WebDriver driver;
 	
-	/*
-	 * Email Send Methods
-	 */
 	public static void email_send () throws InterruptedException {
 		Send_Email email = new Send_Email(driver);
 		TimeUnit.SECONDS.sleep(5);
 		email.sending_email();
 	}
 	
-	/*
-	 * Create API URL Script
-	 */
 	public static void APIURLScript() throws Exception {
 		//TarfileCreate.CreateTarGZ();
 		//ExecuteScript.copy_linuxfile();
@@ -36,7 +30,7 @@ public class MainFunc {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		//APIURLScript();
+		APIURLScript();
 		//email_send();
 	}
 
