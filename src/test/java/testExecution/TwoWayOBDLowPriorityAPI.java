@@ -2,6 +2,8 @@ package testExecution;
 
 import static io.restassured.RestAssured.given;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import com.konnect.api.generic.APIResponseValidationLibrary;
@@ -36,13 +38,11 @@ import io.restassured.specification.RequestSpecification;
 	}
  *	
  * Note : once IVR number is attached need to deleted[ivr number] by delete request
- * 
- * Note : We are using GIT 
- * Note 2 : Updating in my branch api_anantha
- * 
  */
 public class TwoWayOBDLowPriorityAPI extends BaseClass {
 
+	private static Logger log = LogManager.getLogger(TwoWayOBDLowPriorityAPI.class.getName());
+	
 	/*
 	 * Passing valid Request and detaching the number
 	 */
@@ -532,7 +532,7 @@ public class TwoWayOBDLowPriorityAPI extends BaseClass {
 						KonnectAPIConstant.str_priority_low, KonnectAPIConstant.str_KA_Account2_2wayOBD_IVRNumber_low_Priority))
 					.when().post(KonnectAPIConstant.str_InvalidACCOUNT_Id+"/"+KonnectAPIConstant.CallsEndPoint).then().log()
 					.all().extract().response();
-			
+			log.info(responseObj.getStatusCode());
 		// Status code
 		APIResponseValidationLibrary.responseStatusCodeValidation(responseObj, "Unauthorized");
 	

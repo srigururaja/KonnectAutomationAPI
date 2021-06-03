@@ -107,7 +107,7 @@ public class KonnectAPIConstant {
 	
 	/************************************************************************************************************/
 	
-	public final static String mediaURL = "https://konnectqa1.kirusa.com/uploads/media/2018_11_13/content_700_1542101618842.wav";
+	public final static String mediaURL = "https://konnectqa1.kirusa.com/uploads/media/2021_04_30/content_739_1619770037567.wav";
 	public final static String callBckUrl = "https://konnectqa1.kirusa.com/admin/callback_url";
 	public final static String id ="Test_automation";
 	
