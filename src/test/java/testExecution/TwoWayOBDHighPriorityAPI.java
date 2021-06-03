@@ -39,13 +39,13 @@ import io.restassured.specification.RequestSpecification;
 	}
  *
  *  Note : once IVR number is attached need to deleted by 'delete request'
- *  
- *  Note 2 : Updating in my branch api_anantha
  */
 public class TwoWayOBDHighPriorityAPI extends BaseClass {
 	
 	/*
 	 * Passing valid Request
+	 * account : anagaraj@kirusa.com
+	 * ivr Number detach
 	 */
 	 @Test(description = "Passing valid Request", groups = { "APIKonnectResponseErrorCode", "2WayOBDHighPriority" }, priority = 1)
 	public void TwowayOBD_validRequest() throws InterruptedException {
@@ -72,7 +72,7 @@ public class TwoWayOBDHighPriorityAPI extends BaseClass {
 	    // Status
         APIResponseValidationLibrary.generic_responseFieldValidation(responseObj, "status", KonnectAPIConstant.str_OK_Status,"String","");
 	
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         
         System.out.println("-- Detach number processing --");
         String delPhNumber = KonnectAPIConstant.str_KA_2wayOBD_IVRNumber_High_Priority;
@@ -92,6 +92,8 @@ public class TwoWayOBDHighPriorityAPI extends BaseClass {
      APIResponseValidationLibrary.generic_responseFieldValidation(responseObj, "status", KonnectAPIConstant.str_OK_Status,"String","");
      
      Thread.sleep(8000);
+     
+     System.out.println("---End of TwowayOBD_validRequest ---");
 	}// end of 'obdHigh_validRequest'
 	
 	
@@ -513,7 +515,6 @@ public class TwoWayOBDHighPriorityAPI extends BaseClass {
 			
 		// Status code
 		APIResponseValidationLibrary.responseStatusCodeValidation(responseObj, "Unauthorized");
-		System.out.println("End of the test script --  TwowayOBD_invalidAuthorizationToken_Request");
 	 }// end of 'TwowayOBD_invalidAuthorizationToken_Request'
 	 
 	 
@@ -537,7 +538,6 @@ public class TwoWayOBDHighPriorityAPI extends BaseClass {
 			
 		// Status code
 		APIResponseValidationLibrary.responseStatusCodeValidation(responseObj, "method_not_allowed");
-		System.out.println("End of the test script --  TwowayOBD_invalidResourceEndPoint");
 		
 	 }// end of 'TwowayOBD_invalidResourceEndPoint'
 	 

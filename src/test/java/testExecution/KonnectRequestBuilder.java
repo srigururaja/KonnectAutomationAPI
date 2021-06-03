@@ -18,7 +18,7 @@ public class KonnectRequestBuilder {
 	 * @Author : Anantha
 	 */
 	public static RequestSpecification buildReq(String str_Authvalue) {
-		RequestSpecification req = new RequestSpecBuilder().setBaseUri(KonnectAPIConstant.Konnect_baseURI+"/api/v1/Accounts").addHeader("Content-Type","application/json").addHeader("Authorization",str_Authvalue).build();
+		RequestSpecification req = new RequestSpecBuilder().setBaseUri(baseURI+"/api/v1/Accounts").addHeader("Content-Type","application/json").addHeader("Authorization",str_Authvalue).build();
 		return req;
 		
 	}

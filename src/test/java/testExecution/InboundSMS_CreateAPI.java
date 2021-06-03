@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import databaseConfig.DataBaseCommonQuery;
 import io.restassured.specification.RequestSpecification;
 
 /*
@@ -39,13 +40,21 @@ public class InboundSMS_CreateAPI extends BaseClass{
 	@BeforeClass
 	public void preCondition() {
 
-		requestSpec = KonnectRequestBuilder.buildReqInboundDelete(str_apiToken_AUTHval);
+		/*requestSpec = KonnectRequestBuilder.buildReqInboundDelete(str_apiToken_AUTHval);
 		
 		responseObj = given().spec(requestSpec).when()
 				.delete("/TMYw2tCcWK_kn7sw4x64DQ==/InboundPhoneNumbers/918883000001")
-				.then().log().all().extract().response();
+				.then().log().all().extract().response();*/
+		if (DataBaseCommonQuery.getChannelPhone_status_activity(KonnectAPIConstant.str_KA_Account3_InboundSMS).get(0).equals("i")) {
+			System.out.println("Number is inactive");
+		} else {
+			System.out.println("Update the DB with status and Activity");
+			DataBaseCommonQuery.update_Channel_Phone_status_activity("i", "detached", KonnectAPIConstant.str_KA_Account3_InboundSMS);
+		}
 
-		System.out.println("---- Before Class ---->" + responseObj.statusCode());
+		
+		
+		//System.out.println("---- Before Class ---->" + responseObj.statusCode());
 
 	}
 	

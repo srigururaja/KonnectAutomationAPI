@@ -1,6 +1,7 @@
 package testExecution;
 
 import java.io.FileInputStream;
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -18,6 +19,7 @@ public class APIController {
 	public static String sDirpath = System.getProperty("user.dir");
 	public static String sconfig = sDirpath + "/resources/APIResponse.properties";
 	public static String sconfigemail = sDirpath + "/resources/email.properties";
+	public static String sconfigdb = sDirpath + "/resources/DBQuery.properties";
 	// read the data from congigProperties
 	public static String readconfigproperties(String skey) {
 		String svalue = null;
@@ -47,6 +49,22 @@ public class APIController {
 			}
 			return svalue;
 		}
+		
+		// read the data from congigProperties
+				public static String readDBproperties(String skey) {
+					String svalue = null;
+					Properties properties = new Properties();
+					try {
+						FileInputStream fis = new FileInputStream(sconfigdb);
+						properties.load(fis);
+						svalue = properties.getProperty(skey);
+
+					} catch (Exception e) {
+
+					}
+					return svalue;
+				}
+			
 	
 	public static int convert_str_to_int(String resp) {
 		int Exp_resp = Integer.parseInt(resp.trim());
@@ -86,5 +104,11 @@ public class APIController {
 	      Thread.sleep(5000);
 	      driver.quit();
 		
+	}
+	
+	public static List<String> getListValue(String jsonString,String strName) {
+		JsonPath js1 = new JsonPath(jsonString);
+		List<String> list = js1.getList(strName);
+		return list;
 	}
 }
