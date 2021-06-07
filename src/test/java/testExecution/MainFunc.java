@@ -73,8 +73,8 @@ public class MainFunc {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		//APIURLScript();
-		//email_send();
-		test();
+		email_send();
+		//test();
 		
 	}
 
